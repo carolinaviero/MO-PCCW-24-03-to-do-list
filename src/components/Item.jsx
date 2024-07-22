@@ -1,6 +1,10 @@
-const Item = ({ task }) => {
+const Item = ({ task, id, handleDeleteTask, handleIsDone, isDone }) => {
   return (
-    <p>{task}</p>
+    <div className="items-container">
+      <button onClick={() => handleIsDone(id)}>{isDone ? '❌' : '✅'}</button>
+      <span className={isDone ? 'completed' : 'incompleted'}>{task}</span>
+      <button onClick={() => handleDeleteTask(id)}>🗑️</button>
+    </div>
   )
 }
 
